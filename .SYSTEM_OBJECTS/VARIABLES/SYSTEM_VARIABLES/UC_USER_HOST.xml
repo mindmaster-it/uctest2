@@ -20,15 +20,21 @@
    <static_values>
       <row>
          <client>1</client>
+         <value1> </value1>
+         <validity_range>USS</validity_range>
+         <key>0001454054</key>
+      </row>
+      <row>
+         <client>1</client>
          <value1>aewin03</value1>
          <validity_range>USS</validity_range>
-         <key>0001454032</key>
+         <key>0001454067</key>
       </row>
       <row>
          <client>1</client>
          <value1> </value1>
          <validity_range>USS</validity_range>
-         <key>0001454054</key>
+         <key>0001454068</key>
       </row>
    </static_values>
 </vara>
