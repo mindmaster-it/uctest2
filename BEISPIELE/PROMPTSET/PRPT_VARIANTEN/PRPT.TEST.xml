@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prpt>
+   <metadata>
+      <row>
+         <version>12.2.1</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <minimum_ae_version>11.2</minimum_ae_version>
+         <child_flags>00000000000000000000000000000000</child_flags>
+         <last_runtimes>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</last_runtimes>
+         <max_parallel_action>1</max_parallel_action>
+         <mrt_time>000000</mrt_time>
+         <name>PRPT.TEST</name>
+         <type>PRPT</type>
+         <queue>CLIENT_QUEUE</queue>
+         <description>Zeigt verschiedene Komponenten des Prompsets</description>
+         <versioning_id>-2085133391</versioning_id>
+      </row>
+   </general_attributes>
+   <gui_description>
+      <row>
+         <xui><![CDATA[<dialog height="507" icon="PRPT" id="PRPTS" left="0" top="0" width="519"><readpanel fill="b" id="PRPTBOX" nl="1" scroll="v" text="PRPT.NEU"><properties><entry name="text">PRPT.NEU</entry><entry name="modifiable">0</entry></properties></readpanel></dialog>]]></xui>
+      </row>
+   </gui_description>
+   <elements>
+      <row>
+         <line_number>5</line_number>
+         <allow_multiselect>1</allow_multiselect>
+         <name>CHECKLIST1#</name>
+         <reference>VARA.QUEUE.LISTE</reference>
+         <reference_type>VARA</reference_type>
+         <separator>;</separator>
+         <value>EINS</value>
+         <xui><![CDATA[<dyncheckgroup alt="1" enabled="1" fill="b" focus="0" id="CHECKLIST1s.00" mode="list" nl="1" required="0" separator=";" text="Checkliste" tooltip="">
+      <properties>
+        <entry listparam="C,N" name="reference">VARA.QUEUE.LISTE</entry>
+        <entry name="text">Checkliste</entry>
+        <entry alias="multiselect" name="cgmultiselect">1</entry>
+        <entry alias="separator" name="cgseparator">;</entry>
+        <entry alias="haslist" name="cghaslist">0</entry>
+        <entry name="quotes"/>
+        <entry name="id">CHECKLIST1s.00</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </dyncheckgroup>]]></xui>
+         <ui_type>dyncheckgroup</ui_type>
+      </row>
+      <row>
+         <line_number>3</line_number>
+         <name>DATEI#</name>
+         <reference>VARA.FILELIST.LW_C.TEMP.CP</reference>
+         <reference_type>VARA</reference_type>
+         <xui><![CDATA[<combo alt="1" dynamic="1" enabled="1" fill="b" filter="0" focus="0" id="DATEIs.00" nl="1" strict="1" text="Datei auswählen" tooltip="" vtype="i">
+         <command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/>
+         <command owner="_self" owneraction="setsource" ownerparam="src|_dialog@src"/>
+         <command owner="_promptsetcontainer" owneraction="getData" request="getpromptcombolist" target="_self" targetaction="setlist" wait="1"/>
+      <properties>
+        <entry listparam="" name="reference">VARA.FILELIST.LW_C.TEMP.CP</entry>
+        <entry name="text">Datei auswählen</entry>
+        <entry name="quotes"/>
+        <entry name="id">DATEIs.00</entry>
+        <entry name="dynamic">1</entry>
+        <entry name="enabled">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </combo>]]></xui>
+         <ui_type>combo</ui_type>
+      </row>
+      <row>
+         <line_number>4</line_number>
+         <max_value>600</max_value>
+         <min_value>0</min_value>
+         <name>INTEGER1#</name>
+         <reference>UC_DATATYPE_NUMERIC</reference>
+         <reference_type>VARA</reference_type>
+         <value>0</value>
+         <xui><![CDATA[<integer alt="1" enabled="1" fill="b" focus="0" id="INTEGER1s.00" max="600" min="0" nl="1" text="Laufzeit des Jobs in Sekunden" tooltip="">
+      <properties>
+        <entry listparam="N" name="reference">UC_DATATYPE_NUMERIC</entry>
+        <entry name="text">Laufzeit des Jobs in Sekunden</entry>
+        <entry name="min">0</entry>
+        <entry name="max">600</entry>
+        <entry name="quotes"/>
+        <entry name="id">INTEGER1s.00</entry>
+        <entry name="enabled">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+      <entry name="initvalue">0</entry>
+         </properties>
+    </integer>]]></xui>
+         <ui_type>integer</ui_type>
+      </row>
+      <row>
+         <line_number>1</line_number>
+         <name>LABEL1#</name>
+         <value>Im Textfeld können Sie einen Text eingeben oder diesen aus einem Variablenobjekt auswählen</value>
+         <xui><![CDATA[<label alt="0" fill="b" id="LABEL1s.00" nl="1" text="Im Textfeld können Sie einen Text eingeben oder diesen aus einem Variablenobjekt auswählen" tooltip="">
+      <properties>
+        <entry name="text">Im Textfeld können Sie einen Text eingeben oder diesen aus einem Variablenobjekt auswählen</entry>
+        <entry name="id">LABEL1s.00</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+      </properties>
+    </label>]]></xui>
+         <ui_type>label</ui_type>
+      </row>
+      <row>
+         <input_assistent>1</input_assistent>
+         <line_number>2</line_number>
+         <allow_multiselect>1</allow_multiselect>
+         <name>TEXTFIELD1#</name>
+         <reference>VARA.STATISCH.PARAMETER</reference>
+         <reference_type>VARA</reference_type>
+         <is_required>1</is_required>
+         <separator>;</separator>
+         <xui><![CDATA[<text alt="1" enabled="1" fill="b" focus="0" id="TEXTFIELD1s.00" inputassistance="1" len="" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Text" tooltip="" upper="0">
+         <oninputassistant>
+            <command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/>
+            <command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/>
+            <command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/>
+         </oninputassistant>
+      <properties>
+        <entry listparam="C,N" name="reference">VARA.STATISCH.PARAMETER</entry>
+        <entry name="text">Text</entry>
+        <entry name="multiselect">1</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">TEXTFIELD1s.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">1</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">1</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text>]]></xui>
+         <ui_type>text</ui_type>
+      </row>
+      <row>
+         <line_number>6</line_number>
+         <name>TIMESTAMP1#</name>
+         <reference>UC_DATATYPE_TIMESTAMP</reference>
+         <reference_type>VARA</reference_type>
+         <value>2014-03-21 08:00:00</value>
+         <xui><![CDATA[<timestamp alt="1" enabled="1" fill="b" focus="" id="TIMESTAMP1s.00" max="" min="" mode="timestamp" nl="1" strict="1" text="Zeitstempel" tooltip="">
+      <properties>
+        <entry listparam="TS" name="reference">UC_DATATYPE_TIMESTAMP</entry>
+        <entry name="calendar"/>
+        <entry name="key"/>
+        <entry name="text">Zeitstempel</entry>
+        <entry alias="min" name="tsmin"/>
+        <entry alias="max" name="tsmax"/>
+        <entry name="tsoutputformat"/>
+        <entry name="id">TIMESTAMP1s.00</entry>
+        <entry name="enabled">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+      <entry name="initvalue">2013-12-20 09:02</entry>
+         </properties>
+    </timestamp>]]></xui>
+         <ui_type>timestamp</ui_type>
+      </row>
+   </elements>
+</prpt>

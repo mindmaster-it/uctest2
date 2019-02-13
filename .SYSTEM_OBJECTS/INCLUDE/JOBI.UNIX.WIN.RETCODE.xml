@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobi>
+   <metadata>
+      <row>
+         <version>12.2.1</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <minimum_ae_version>11.2</minimum_ae_version>
+         <child_flags>00000000000000000000000000000000</child_flags>
+         <last_runtimes>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</last_runtimes>
+         <name>JOBI.UNIX.WIN.RETCODE</name>
+         <type>JOBI</type>
+         <description>Universelles Checkerror-Include für UNIX und UDM, WINDOWS</description>
+         <versioning_id>840006829</versioning_id>
+      </row>
+   </general_attributes>
+   <documentation>
+      <row>
+         <Docu>Kommt von Kunde GAD. Übermittelt durch CLJ</Docu>
+      </row>
+   </documentation>
+   <scripts>
+      <row>
+         <process><![CDATA[!Universelles Checkerror-Include für UNIX und UDM, WINDOWS,
+!dass bei einem Returncode <> 0 den Job abbricht
+
+!Ermittlung des Executor-Betriebssystems (UNIX oder WINDOWS)
+:SET &OS_TYPE# = GET_VAR(UC_HOST_JCL_VAR)
+
+!Fehlerprüfung und Abbruch für UNIX- und UDM-auf-UNIX-Jobs
+:IF &OS_TYPE# = "UNIX"
+:  SET &UNIX_SHELL# = GET_ATT(UNIX_SHELL)
+:  IF &UNIX_SHELL# <> 'perl'
+:    IF &UNIX_SHELL# = 'udm'
+       if $(_lastrc) NE 0
+         return $(_lastrc)
+       end
+:    ELSE
+       retcode=$?
+         if [ "$retcode" -ne "0" ]; then
+         &UC_JOBMD MNR=&UC_MANDANT IPA=&UC_IP_ADDR JNR=&UC_REALNR PNR=&UC_IP_PORT TYP=E RET=$retcode TXT="        Job fehlerhaft beendet"
+         exit $retcode
+       fi
+:    ENDIF
+:  ENDIF
+:ENDIF
+
+!Fehlerprüfung und Abbruch für Windows-Jobs
+:IF &OS_TYPE# = "WINDOWS"
+  @set retcode=%errorlevel%
+  @if NOT %ERRORLEVEL% == 0 goto :retcode
+:ENDIF
+]]></process>
+      </row>
+   </scripts>
+</jobi>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vara>
+   <metadata>
+      <row>
+         <version>12.2.1</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <minimum_ae_version>11.2</minimum_ae_version>
+         <name>UC_UTILITY_REORG</name>
+         <type>VARA</type>
+         <is_shared>R</is_shared>
+         <sub_type>STATIC</sub_type>
+         <description>Automatisch angelegt</description>
+         <versioning_id>693883498</versioning_id>
+      </row>
+   </general_attributes>
+   <variable_definitions>
+      <row>
+         <column_count>5</column_count>
+         <on_not_found>I</on_not_found>
+         <sort_order>0</sort_order>
+         <type>STATIC</type>
+         <data_type>C</data_type>
+         <validity_range>FREI</validity_range>
+      </row>
+   </variable_definitions>
+   <static_values>
+      <row>
+         <client>1</client>
+         <value1>TRUE 0045 TRUE 0006</value1>
+         <validity_range>FREI</validity_range>
+         <key>AH</key>
+      </row>
+      <row>
+         <client>1</client>
+         <value1>TRUE 0007 0007</value1>
+         <validity_range>FREI</validity_range>
+         <key>MELD</key>
+      </row>
+      <row>
+         <client>1</client>
+         <value1>TRUE 0030 TRUE</value1>
+         <validity_range>FREI</validity_range>
+         <key>OBJECT_AUDIT</key>
+      </row>
+      <row>
+         <client>1</client>
+         <value1>TRUE 0065 TRUE 0006</value1>
+         <validity_range>FREI</validity_range>
+         <key>RH</key>
+      </row>
+      <row>
+         <client>1</client>
+         <value1>TRUE 0090 TRUE 0003</value1>
+         <validity_range>FREI</validity_range>
+         <key>VERSION_CONTROL</key>
+      </row>
+   </static_values>
+</vara>

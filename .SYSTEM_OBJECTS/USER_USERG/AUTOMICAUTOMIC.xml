@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+   <metadata>
+      <row>
+         <version>12.2.1</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <minimum_ae_version>11.2</minimum_ae_version>
+         <child_flags>00000000000000000000000000000000</child_flags>
+         <last_runtimes>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</last_runtimes>
+         <name>AUTOMIC/AUTOMIC</name>
+         <type>USER</type>
+         <versioning_id>-162858683</versioning_id>
+      </row>
+   </general_attributes>
+   <user_attributes>
+      <row>
+         <eh_refresh_interval>3</eh_refresh_interval>
+         <first_name>Reorg</first_name>
+         <last_name>Automic</last_name>
+         <multi_logons>3</multi_logons>
+         <privilege>1099512676352</privilege>
+         <valid_from>2000-01-01 00:00:00.0</valid_from>
+         <valid_to>2000-01-01 00:00:00.0</valid_to>
+      </row>
+   </user_attributes>
+   <authorizations>
+      <row>
+         <auth_group>1</auth_group>
+         <filter_object_type>*</filter_object_type>
+         <line_number>1</line_number>
+      </row>
+   </authorizations>
+</user>

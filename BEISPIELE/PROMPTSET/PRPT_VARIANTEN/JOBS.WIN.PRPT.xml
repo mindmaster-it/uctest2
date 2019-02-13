@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs>
+   <metadata>
+      <row>
+         <version>12.2.1</version>
+      </row>
+   </metadata>
+   <general_attributes>
+      <row>
+         <minimum_ae_version>11.2</minimum_ae_version>
+         <auto_deactivation>A</auto_deactivation>
+         <child_flags>10000000000000000000000000000000</child_flags>
+         <ert>6</ert>
+         <ert_trend>4</ert_trend>
+         <platform>WINDOWS</platform>
+         <last_runtimes>CQAAAAkAAAAFAAAABAAAAAEAAAAOAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</last_runtimes>
+         <max_parallel_action>1</max_parallel_action>
+         <mrt_time>000000</mrt_time>
+         <name>JOBS.WIN.PRPT</name>
+         <has_prompts>1</has_prompts>
+         <type>JOBS</type>
+         <inherit_output_filter>N</inherit_output_filter>
+         <queue>CLIENT_QUEUE</queue>
+         <versioning_id>-800831605</versioning_id>
+      </row>
+   </general_attributes>
+   <scripts>
+      <row>
+         <process><![CDATA[dir
+@set retcode=%errorlevel%
+@if NOT %ERRORLEVEL% == 0 goto :retcode
+
+echo &DATEI#
+@set retcode=%errorlevel%
+@if NOT %ERRORLEVEL% == 0 goto :retcode
+
+ping localhost -n &INTEGER1#
+@set retcode=%errorlevel%
+@if NOT %ERRORLEVEL% == 0 goto :retcode
+
+echo Zeitstempel aus Prompt: &TIMESTAMP1#
+@set retcode=%errorlevel%
+@if NOT %ERRORLEVEL% == 0 goto :retcode
+]]></process>
+      </row>
+   </scripts>
+   <job_attributes>
+      <row>
+         <code_table>ASCII_850</code_table>
+         <platform>WINDOWS</platform>
+         <agent>WIN01</agent>
+         <login>LOGIN.ALL</login>
+         <job_report_path>2</job_report_path>
+         <win_work_dir>c:\</win_work_dir>
+         <win_typ>0</win_typ>
+         <win_view>0</win_view>
+         <win_logon_as_batch>0</win_logon_as_batch>
+         <win_show_at_desktop>0</win_show_at_desktop>
+         <win_report_by_script>0</win_report_by_script>
+         <job_object>1</job_object>
+         <win_cmd></win_cmd>
+      </row>
+   </job_attributes>
+   <prompt_set_list>
+      <row>
+         <line_number>1</line_number>
+         <prompt_set>PRPT.TEST</prompt_set>
+         <display_order>1</display_order>
+      </row>
+   </prompt_set_list>
+   <prompt_set_defaults>
+      <row>
+         <prompt_set_element_number>1</prompt_set_element_number>
+         <prompt_set>PRPT.TEST</prompt_set>
+         <variable_name>CHECKLIST1#</variable_name>
+      </row>
+   </prompt_set_defaults>
+</jobs>
